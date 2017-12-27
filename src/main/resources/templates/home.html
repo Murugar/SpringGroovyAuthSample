@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Spring Boot Groovy Thymeleaf</title>
+</head>
+<body>
+<h1>Welcome from Spring Boot Powered Groovy ThymeLeaf!</h1>
+
+<div sec:authorize="hasRole('ROLE_USER')">
+    <p>Click <a th:href="@{/user/hello}">here</a> for user greetings.</p>
+    <br/>
+</div>
+
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <p>Click <a th:href="@{/admin/home}">here</a> for admin.</p>
+    <br/>
+</div>
+
+</body>
+</html>
